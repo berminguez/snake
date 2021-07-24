@@ -11,6 +11,8 @@ module.exports = {
       secondary: '#105310',
       customblack: '#050505',
       customwhite: '#ffffff',
+      boardbg: '#0E0E0E',
+      apple: 'red',
     },
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
