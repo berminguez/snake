@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import GameModeItem from './GameModeItem';
-export default function GameModeSelector() {
-  const [mode, setmode] = useState('jail');
-
+export default function GameModeSelector({ gameMode, setGameMode }) {
   const modeItems = [
     {
       id: 1,
@@ -16,13 +14,13 @@ export default function GameModeSelector() {
     },
   ];
 
-  if (mode === 'jail') {
+  if (gameMode === 'jail') {
     var selected = 'text-primary';
   }
 
   const GameModeItemsList = modeItems.map((item) => (
     <li key={item.id}>
-      <GameModeItem item={item} mode={mode} setmode={setmode} />
+      <GameModeItem item={item} gameMode={gameMode} setGameMode={setGameMode} />
     </li>
   ));
   return (

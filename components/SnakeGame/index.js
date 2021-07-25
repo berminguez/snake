@@ -1,41 +1,42 @@
-import Square from './Square';
-import { useState, useEffect } from 'react';
-import { FiRefreshCcw } from 'react-icons/fi';
-export default function SnakeGame({
-  board,
-  currentSnake,
-  width,
-  height,
-  widthsquare,
-  setboard,
-  setCurrentSnake,
-}) {
-  let score = 0;
-  let maxscore = 0;
-  let ints = 0;
-  let squares = [];
-  let direction = 1;
-  let gameActive = 0;
-  let appleIndex = 0;
-  let velocityInit = 100;
-  let velocity = velocityInit;
-  let timerId;
-  let gameMode = 1;
+import GameModeSelector from '../GameModeSelector';
+import ScoreDisplay from '../ScoreDisplay';
+import { useState, useEffect, useCallback } from 'react';
+import IntentDisplay from '../IntentsDisplay';
+import MaxScoreDisplay from '../MaxScoreDisplay';
+import VolumeManager from '../VolumeManager';
+import SnakeBoardGame from './SnakeBoardGame';
 
-  const BoardRender = board.map((item, key) => (
-    <Square key={key} widthsquare={widthsquare} type={item} />
-  ));
+export default function SnakeGame() {
+  const [score, setscore] = useState(0);
+  const [intents, setintents] = useState(0);
+  const [maxscore, setmaxscore] = useState(0);
+  const [volume, setvolume] = useState(0);
+  const [gameMode, setGameMode] = useState('jail');
 
   return (
-    <div className=' w-full'>
-      <div
-        className='gridSnake flex flex-wrap bg-secondary mx-auto '
-        style={{
-          width: width * widthsquare + 'px',
-          height: height * widthsquare + 'px',
-        }}
-      >
-        {BoardRender}
+    <div className='grid grid-cols-1 gap-4 '>
+      <div className='flex justify-between gap-4 flex-wrap'>
+        <GameModeSelector gameMode={gameMode} setGameMode={setGameMode} />
+        <ScoreDisplay score={score} />
+      </div>
+      <div>
+        <SnakeBoardGame
+          width={32}
+          height={16}
+          widthsquare={28}
+          gameMode={gameMode}
+          setscore={setscore}
+          setintents={setintents}
+          maxscore={maxscore}
+          setmaxscore={setmaxscore}
+        />
+      </div>
+      <div>
+        <div className='flex justify-end gap-4 items-center'>
+          <IntentDisplay intents={intents} />
+          <MaxScoreDisplay maxscore={maxscore} />
+          <VolumeManager volume={volume} setvolume={setvolume} />
+        </div>
       </div>
     </div>
   );

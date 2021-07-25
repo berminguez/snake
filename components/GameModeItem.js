@@ -1,17 +1,17 @@
-import { useState } from 'react';
-export default function GameModeItem({ item, mode, setmode }) {
+export default function GameModeItem({ item, gameMode, setGameMode }) {
   var myclasses = '';
-  if (mode === item.slug) {
+  if (gameMode === item.slug) {
     var myclasses = 'text-primary uppercase font-sans font-normal text-lg';
   } else {
     var myclasses = 'text-customwhite uppercase font-sans font-normal text-lg';
   }
+
   return (
     <a
       className={myclasses}
       href='#'
       onClick={() => {
-        setmode(item.slug);
+        setGameMode(item.slug);
       }}
     >
       {item.name}
