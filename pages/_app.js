@@ -3,6 +3,7 @@ import 'tailwindcss/tailwind.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import generalbackground from '../public/generalbackground.jpg';
+import MobileController from '../components/SnakeGame/MobileController';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }) {
 
         <Component {...pageProps} />
 
+        <MobileController />
         <Footer />
       </div>
     </>

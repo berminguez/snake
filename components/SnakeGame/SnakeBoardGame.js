@@ -20,7 +20,7 @@ class SnakeBoardGame extends React.Component {
     let direction = 1;
     let gameActive = false;
     let appleIndex = 0;
-    let velocityInit = 50;
+    let velocityInit = 100;
     let velocity = velocityInit;
     let timerId;
     let gameMode = this.props.gameMode;
@@ -303,6 +303,8 @@ class SnakeBoardGame extends React.Component {
       score = 0;
       setscore(score);
 
+      gameActive = true;
+
       deleteStartScreen();
 
       gameMode = handlegameMode();
@@ -336,7 +338,6 @@ class SnakeBoardGame extends React.Component {
 
     addEventListener('keydown', (e) => {
       if (e.code === 'Space' && gameActive === false) {
-        gameActive = true;
         startGame();
       }
     });
