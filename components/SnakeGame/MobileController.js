@@ -11,12 +11,12 @@ export default function MobileController() {
   };
 
   return (
-    <div className='font-sans text-customwhite inline-flex md:hidden py-12'>
+    <div className='font-sans text-customwhite inline-flex md:hidden pb-8'>
       <div className='flex flex-col gap-2 items-center justify-center mx-auto'>
         <div>
           <a
-            href='#'
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleClick('ArrowUp', 38);
             }}
           >
@@ -25,24 +25,24 @@ export default function MobileController() {
         </div>
         <div className='flex gap-2 items-center justify-center'>
           <a
-            href='#'
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleClick('ArrowLeft', 37);
             }}
           >
             <img src='/leftarrow.svg'></img>
           </a>{' '}
           <a
-            href='#'
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleClick('ArrowDown', 40);
             }}
           >
             <img src='/downarrow.svg'></img>
           </a>{' '}
           <a
-            href='#'
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleClick('ArrowRight', 39);
             }}
           >

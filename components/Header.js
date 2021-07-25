@@ -1,13 +1,13 @@
 export default function Header() {
   return (
-    <header className='w-full bg-customblack p-12'>
+    <header className='w-full bg-customblack p-4 md:p-12'>
       <div className='flex gap-8 content-center items-center'>
         <div>
           <h1 className='text-customwhite'>
             <img
               src='/SnakeLogo.svg'
               alt='Snake Logo'
-              className='h-8 md:h-12 w-auto'
+              className='h-4 sm:h-8 md:h-12 w-auto'
             />
           </h1>
         </div>

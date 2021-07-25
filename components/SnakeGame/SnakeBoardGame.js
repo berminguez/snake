@@ -52,7 +52,7 @@ class SnakeBoardGame extends React.Component {
 
       const startbutton = document.createElement('a');
       startbutton.setAttribute('id', 'gamesnake-startbutton');
-      startbutton.href = '#';
+
       startbutton.classList.add(
         'px-6',
         'py-2',
