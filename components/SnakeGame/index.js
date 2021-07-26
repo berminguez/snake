@@ -13,7 +13,7 @@ export default function SnakeGame() {
   const [intents, setintents] = useState(0);
   const [maxscore, setmaxscore] = useState(0);
   const [volume, setvolume] = useState(0);
-  const [gameMode, setGameMode] = useState('jail');
+  const [gameMode, setGameMode] = useState('unlimited');
 
   const [width, setwidth] = useState(16);
   const [height, setheight] = useState(16);

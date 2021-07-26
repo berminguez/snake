@@ -163,8 +163,7 @@ class SnakeBoardGame extends React.Component {
         squares[currentSnake[0]].classList.remove('bg-apple');
         //grow our snake by adding class of snake to it
         squares[currentSnake[0]].classList.add('bg-primary');
-        //generate new apple
-        generateApple();
+
         //add one to the score
         //increaseScore();
         score = score + 1;
@@ -248,6 +247,11 @@ class SnakeBoardGame extends React.Component {
         //remove styling from last element if there is not an apple
         squares[tail].classList.remove('bg-primary');
         squares[tail].classList.add('bg-boardbg');
+      }
+
+      if (isApple) {
+        //generate new apple
+        generateApple();
       }
 
       //add new element
